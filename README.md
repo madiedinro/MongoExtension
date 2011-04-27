@@ -42,3 +42,68 @@ Configuration
 
 
 
+Usage
+-----
+
+
+Put you document in lib/Documents dir
+
+	<?php
+	// lib/Documents/User.php
+
+	namespace Documents;
+
+
+	/** @Document(collection="users") */
+	class User
+	{
+		/** @Id */
+		private $id;
+
+		public function setId($id)
+		{
+			$this->id = $id;
+		}
+
+		public function getId()
+		{
+			return $this->id;
+		}
+
+
+		/** @Field(type="string") */
+		private $username;
+
+
+		public function setUsername($username)
+		{
+			$this->username = $username;
+		}
+
+		public function getUsername()
+		{
+			return $this->username;
+		}
+
+	}
+
+
+After that use you documents
+
+
+	$app->get('/testdb', function () use($app)
+	{
+
+		$document = new User();
+		$document->setUsername('dima');
+
+		$app['mongo']->persist($document);
+		$app['mongo']->flush();
+
+		return 'User created successfully!';
+
+	});
+
+
+That's all!
+

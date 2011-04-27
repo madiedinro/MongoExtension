@@ -12,6 +12,14 @@ use Doctrine\Common\Annotations\AnnotationReader,
     Doctrine\ODM\MongoDB\Configuration,
     Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 
+
+/**
+ * Doctrine ODM (MongoDB) extension for the Silex framework. 
+ * 
+ * 
+ * @author Dmitry Rodin (madiedinro@gmail.com)
+ * 
+ */
 class MongoExtension implements ExtensionInterface
 {
     public function register(Application $app)
