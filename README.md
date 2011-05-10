@@ -30,6 +30,7 @@ Configuration
 	$app->register(new MongoExtension(), array(
 		'mongo.options'            => array(
 			'dbname'	=> 'madieru' // default DB
+			'server' => 'localhost' // HOST
 		),
 		'mongo.common.class_path'  => __DIR__.'/vendor/doctrineCommon/lib',
 		'mongo.mongodb.class_path'  => __DIR__.'/vendor/doctrineMongoDB/lib',
