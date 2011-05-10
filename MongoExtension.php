@@ -29,7 +29,7 @@ class MongoExtension implements ExtensionInterface
         ), isset($app['mongo.options']) ? $app['mongo.options'] : array());
 		
         $app['mongo'] = $app->share(function () use($app) {
-			return DocumentManager::create(new Connection(), $app['mongo.config']);			
+			return DocumentManager::create(new Connection($app['mongo.options']['server']), $app['mongo.config']);
         });
 		
         $app['mongo.config'] = $app->share(function () use($app) {
