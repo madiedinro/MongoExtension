@@ -20,6 +20,10 @@ Configuration
 	// ...
 	
 	use DRodin\Extension\MongoExtension;
+	
+	// ...
+	
+	use Documents\User;
 
 	// ...
 
